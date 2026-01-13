@@ -10,7 +10,7 @@ public class HotdogDecorator : AHotdogDecorator
     [field:SerializeField]
     private float HotdogAddedWeight = 150;
     [field:SerializeField]
-    private Hotdog _hotdog;
+    private AHotdog _hotdog;
     public override float GetCost()
     {
         base.SetHotdog(_hotdog); // failsafe
