@@ -11,21 +11,24 @@ public class HotdogDecorator : AHotdogDecorator
     private float HotdogAddedWeight = 150;
     [field:SerializeField]
     private AHotdog _hotdog;
+
+    void OnEnable()
+    {
+        SetHotdog(_hotdog);
+    }
     public override float GetCost()
     {
-        base.SetHotdog(_hotdog); // failsafe
-        return base.GetCost() + AdditionalCost;
+        
+        return hotdog.GetCost() + AdditionalCost;
     }
 
     public override string GetName()
     {
-        base.SetHotdog(_hotdog); // failsafe
-        return base.GetName() + HotdogAditionalName;
+        return hotdog.GetName() + HotdogAditionalName;
     }
 
     public override float GetWeight()
     {
-        base.SetHotdog(_hotdog); // failsafe
-        return base.GetWeight() + HotdogAddedWeight;
+        return hotdog.GetWeight() + HotdogAddedWeight;
     }
 }
